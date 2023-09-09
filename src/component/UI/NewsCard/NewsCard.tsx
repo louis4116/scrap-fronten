@@ -78,7 +78,7 @@ const NewsCard = ({ source, date, title, url, img, summary }: NewsItem) => {
             position: 'relative',
           }}
         >
-          <img className="card-img-top img-fluid" src={defaultImg} />
+          <img className="card-img-top img-fluid" src={defaultImg} alt="" />
         </div>
 
         {status === 'success' && (

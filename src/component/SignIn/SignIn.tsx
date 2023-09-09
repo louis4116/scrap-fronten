@@ -63,31 +63,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-
-{
-  /* <div
-className="flex-fill d-flex align-items-center justify-content-center shadow"
-style={{ zIndex: '5' }}
->
-<div className="p-5 rounded bg-white shadow" style={{ width: '400px' }}>
-  <span className="d-flex align-items-center justify-content-center mb-2">
-    <FaRegNewspaper fontSize={30} />
-    <h2 style={{ marginBottom: '0' }}>台灣即時新聞網</h2>
-  </span>
-  <div className="d-flex align-items-center mt-3">
-          <span
-            className="link-primary"
-            style={{ cursor: 'pointer' }}
-            onClick={() => setShow(false)}
-          >
-            註冊
-          </span>
-          <span className="ms-auto">
-            <Link to="/forgetPassword" className="">
-              忘記密碼
-            </Link>
-          </span>
-        </div>
-      </div>
-    </div> */
-}

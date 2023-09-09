@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const ErrorPage = () => {
@@ -16,7 +16,7 @@ const ErrorPage = () => {
       navigate('/news');
     }
     return () => clearInterval(countTime);
-  }, [time]);
+  }, [time, navigate]);
   return (
     <div className="flex-fill d-flex align-items-center justify-content-center flex-column fs-2">
       <h1>404 NOT FOUND</h1>

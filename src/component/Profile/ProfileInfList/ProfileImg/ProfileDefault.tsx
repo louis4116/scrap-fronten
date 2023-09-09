@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface Default {
   show: boolean;
   avatar?: string;
@@ -14,11 +12,13 @@ const ProfileDefault = ({ show, avatar, setShow }: Default) => {
           <img
             src={avatar}
             style={{ width: '200px', height: '200px', borderRadius: '50%' }}
+            alt=""
           />
         ) : (
           <img
             src={require('../../../../img/Profile.jpg')}
             style={{ width: '200px', height: '200px', borderRadius: '50%' }}
+            alt=""
           />
         )}
       </div>

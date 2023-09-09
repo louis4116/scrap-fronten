@@ -27,7 +27,7 @@ const NewsAll = () => {
         }),
       );
     }
-  }, [data]);
+  }, [data, dispatch, location.pathname]);
   return (
     <NewsList
       newsName={newsName}

@@ -3,8 +3,7 @@ import AvatarEditor from 'react-avatar-editor';
 import Swal from 'sweetalert2';
 import { debounce } from 'lodash';
 import { useUpdatedImgMutation } from '../../../../api/userDataApi';
-import useLoginState from '../../../../custom-hook/useLoginState';
-import ProfileDefaul from './ProfileDefault';
+import ProfileDefault from './ProfileDefault';
 import 'react-image-crop/src/ReactCrop.scss';
 
 interface ProfileImg {
@@ -68,7 +67,7 @@ const ProfileImg = ({
       if (avatorMb > 2) return;
       await updatedImg({ id, token, avatar })
         .unwrap()
-        .then((e) => {
+        .then(() => {
           Swal.fire({
             icon: 'success',
             title: '成功！！！',
@@ -76,7 +75,7 @@ const ProfileImg = ({
           });
         })
         .then(() => restore())
-        .catch((e) =>
+        .catch(() =>
           Swal.fire({
             icon: 'error',
             title: '錯誤！！！',
@@ -134,7 +133,7 @@ const ProfileImg = ({
           </span>
         </>
       ) : (
-        <ProfileDefaul show={show} setShow={setShow} avatar={avatar} />
+        <ProfileDefault show={show} setShow={setShow} avatar={avatar} />
       )}
     </div>
   );

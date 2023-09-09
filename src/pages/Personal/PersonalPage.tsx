@@ -22,7 +22,7 @@ const PersonalPage = () => {
     if (status !== 'success') {
       navigate('/signup');
     }
-  }, [status]);
+  }, [status, navigate]);
   useEffect(() => {
     dispatch(authStoreActions.storeUser(data?.data));
     dispatch(userNewsAction.storeUserNews(data?.data.news));
