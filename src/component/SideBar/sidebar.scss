@@ -1,0 +1,12 @@
+.side-bar{
+    cursor: pointer;
+    color:rgba(255,255,255,0.5);
+    font-size: 20px;
+    &:hover{
+        background-color:rgba(0,0,0,0.05);
+        color: white;
+    }
+    &:active{
+        background-color: rgba(0,0,0,0.2);
+    }
+}

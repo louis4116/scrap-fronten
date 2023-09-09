@@ -1,0 +1,11 @@
+.profile-newlist-delete{
+    font-size: 40px;
+    color:rgba(255,0,0,0.4);
+    cursor: pointer;
+    &:hover{
+        color: rgba(255,0,0,0.6);
+    }
+    &:active{
+        color:red;
+    }
+}

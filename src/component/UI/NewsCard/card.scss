@@ -1,0 +1,30 @@
+
+.news-detail-card{
+    cursor: pointer;
+}
+.news-detail-card:hover{
+    background-color: #f7f7f7;
+}
+
+.news-card-detail-img{
+    display: block;
+    width: 160px;
+    height: 120px;
+}
+.news-card-detail-date{
+    color: #816a3e;
+}
+.news-card-detail-summary{
+
+    font-size: 10px;
+    color: #61677A;
+}
+.news-card-label{
+    position: absolute;
+    right: 0;
+    color: red;
+    cursor: pointer;
+    &:hover{
+        color: #C70039;
+    }
+}

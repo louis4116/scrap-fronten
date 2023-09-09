@@ -1,0 +1,34 @@
+$custom-margin-tops: (
+  marginTop: 10rem);
+
+.loading-container{
+    margin-top:map-get($custom-margin-tops , marginTop) !important;
+}
+.loading-p{
+    font-size: 2rem;
+}
+.loading-p span{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: black;
+    border-radius: 50%;
+    margin: 0.5rem;
+    animation: dots 1.5s infinite ;
+}
+.loading-p span:nth-of-type(2) {
+    animation-delay: .2s;
+}
+.loading-p span:nth-of-type(3){
+    animation-delay: .4s;
+}
+@keyframes dots{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

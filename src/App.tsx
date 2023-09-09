@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from 'react-router-dom';
+import { newsRoute } from './route/Route';
+import SideBar from './component/SideBar/SideBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.scss';
 
 function App() {
+  const routes = useRoutes(newsRoute());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="App" style={{ height: '100%' }}>
+      <div
+        className="news-header d-flex flex-row flex-nowrap"
+        style={{ height: '100%' }}
+      >
+        <ul
+          className="nav nav-pills d-flex align-items-start flex-column flex-shrink-0 py-3 shadow-lg rounded-end"
+          style={{
+            width: '8rem',
+            backgroundColor: '#0d6efd',
+            zIndex: '100',
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <SideBar />
+        </ul>
+        {routes}
+      </div>
     </div>
   );
 }

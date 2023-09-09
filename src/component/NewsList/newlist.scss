@@ -1,0 +1,9 @@
+.newlist-detail{
+    background-color: #FAF3F0;  
+    overflow-y: scroll;
+}
+
+.newlist-detail-category-ul > .nav-item > .active,
+.newlist-detail-category-ul >  .nav-item :hover{
+    background-color: #FAF3F0 !important;
+}
