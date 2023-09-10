@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { FaArrowUpWideShort, FaArrowDownShortWide } from 'react-icons/fa6';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 const CheckSort = ({ renderNews, setRenderNews }: Props) => {
   const [order, setOrder] = useState(true);
 
-  useEffect(() => {
+  const test = useCallback(() => {
     let result = [...renderNews]?.sort((a: any, b: any) => {
       let tempA = new Date(a.date).getTime();
       let tempB = new Date(b.date).getTime();
@@ -20,7 +20,11 @@ const CheckSort = ({ renderNews, setRenderNews }: Props) => {
       }
     });
     setRenderNews(result);
-  }, [order]);
+  }, [renderNews, order]);
+
+  useEffect(() => {
+    console.log('render');
+  }, [test]);
 
   return (
     <div

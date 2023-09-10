@@ -6,7 +6,7 @@ import { useUpdatedImgMutation } from '../../../../api/userDataApi';
 import ProfileDefault from './ProfileDefault';
 import 'react-image-crop/src/ReactCrop.scss';
 
-interface ProfileImg {
+interface ProfileImgProps {
   id: string;
   token: string;
   avatar?: string;
@@ -20,7 +20,7 @@ const ProfileImg = ({
   avatar,
   filebase64,
   setFileBase64,
-}: ProfileImg) => {
+}: ProfileImgProps) => {
   const [scale, setScale] = useState(1.5);
   const [show, setShow] = useState(false);
   const [sure, setSure] = useState(false);
