@@ -9,19 +9,9 @@ interface CategoryProps {
   personal: string;
   setPersonal: (value: string) => void;
 }
-
+const personalStyle =
+  'personal-page-category list-group-item d-flex px-4 py-3 mt-1';
 const ProfileLink = ({ name, path, personal, setPersonal }: CategoryProps) => {
-  const { pathname } = useLocation();
-  const personalStyle =
-    'personal-page-category list-group-item d-flex px-4 py-3 mt-1';
-
-  useEffect(() => {
-    if (pathname.includes('storedNews')) {
-      setPersonal(path);
-    } else {
-      setPersonal('');
-    }
-  }, []);
   return (
     <Link
       to={`/personal/${path}`}
