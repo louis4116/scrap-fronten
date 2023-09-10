@@ -50,6 +50,7 @@ const ProfileImg = ({
       const avatar = avatarRef.current.getImage().toDataURL();
       Swal.fire({
         html: `  <img src=${avatar} style="border-radius:50%;width:150px;height:150px"/>`,
+        heightAuto: false,
       });
     }
   };
@@ -59,6 +60,7 @@ const ProfileImg = ({
         icon: 'error',
         title: '錯誤！！！',
         text: '請上傳圖片！！！',
+        heightAuto: false,
       });
     }
     if (avatarRef?.current && !!avatarRef?.current?.props.image) {
@@ -72,6 +74,7 @@ const ProfileImg = ({
             icon: 'success',
             title: '成功！！！',
             text: '上傳成功！！！',
+            heightAuto: false,
           });
         })
         .then(() => restore())
@@ -80,6 +83,7 @@ const ProfileImg = ({
             icon: 'error',
             title: '錯誤！！！',
             text: '請確認圖檔大小！！！',
+            heightAuto: false,
           }),
         );
     }

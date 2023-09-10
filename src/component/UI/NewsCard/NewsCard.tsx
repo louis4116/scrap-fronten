@@ -37,6 +37,7 @@ const NewsCard = ({ source, date, title, url, img, summary }: NewsItem) => {
           icon: 'success',
           title: '儲存成功！！！',
           confirmButtonText: '確認',
+          heightAuto: false,
         }),
       )
       .catch(() =>
@@ -44,6 +45,7 @@ const NewsCard = ({ source, date, title, url, img, summary }: NewsItem) => {
           icon: 'error',
           title: '新聞已儲存！！！',
           confirmButtonText: '確認',
+          heightAuto: false,
         }),
       );
   }, 500);

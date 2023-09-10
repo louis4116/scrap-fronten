@@ -24,10 +24,10 @@ const ProfileNewsListForm = ({ memo, newsId, token }: NewsForm) => {
         <Field
           type="text"
           name="newsMemo"
-          className="form-control"
+          className="form-control w-md-100"
           id="newsMemo"
           placeholder="備註"
-          style={{ maxWidth: '400px' }}
+          style={{ maxWidth: '540px' }}
         />
       </Form>
     </Formik>

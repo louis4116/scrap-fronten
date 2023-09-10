@@ -25,6 +25,7 @@ const ResetPage = () => {
           title: '成功！！！',
           text: '稍後將導至登入頁面',
           confirmButtonText: '確認',
+          heightAuto: false,
         }),
       )
       .then((e) => {
@@ -37,6 +38,7 @@ const ResetPage = () => {
           icon: 'error',
           title: '錯誤！！！',
           text: '出現錯誤，令牌過期或是其他錯誤',
+          heightAuto: false,
         }),
       );
   }, 1000);

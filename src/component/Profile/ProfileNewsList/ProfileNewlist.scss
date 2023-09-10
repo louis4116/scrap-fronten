@@ -9,3 +9,27 @@
         color:red;
     }
 }
+
+.profile-newlist-content{
+    width: calc(100% - 272px);
+}
+
+.profile-newlist-img{
+    width: 272px;
+    height: 170px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-newlist-title{
+    font-size:20px ;
+}
+
+@media screen and (max-width:650px) {
+
+    .profile-newlist-title{
+        font-size: 17.5px;
+    
+    }
+}

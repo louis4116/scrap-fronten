@@ -23,6 +23,7 @@ const SideBar = () => {
       showDenyButton: true,
       confirmButtonText: '確認',
       denyButtonText: '返回',
+      heightAuto: false,
     })
       .then((result) => {
         if (result.isConfirmed) {
@@ -34,6 +35,7 @@ const SideBar = () => {
         Swal.fire({
           title: '錯誤！！！',
           icon: 'error',
+          heightAuto: false,
         }),
       );
   };

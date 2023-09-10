@@ -28,6 +28,7 @@ const SignIn = () => {
           icon: 'success',
           text: '稍後會導引至首頁',
           timer: 2000,
+          heightAuto: false,
         }),
       )
       .then(() => navigate('/news'))
@@ -36,6 +37,7 @@ const SignIn = () => {
           title: '登入失敗',
           icon: 'error',
           text: '請確認信箱或密碼是否正確',
+          heightAuto: false,
         }),
       );
   }, 500);

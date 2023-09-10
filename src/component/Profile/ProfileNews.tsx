@@ -58,7 +58,7 @@ const ProfileNews = () => {
         <CheckSort renderNews={renderNews} setRenderNews={setRenderNews} />
       </ul>
 
-      <div className="row d-flex align-items-center justify-content-center w-100">
+      <div className="d-flex align-items-center justify-content-center flex-column w-100">
         {renderNews.length === 0 ? (
           <h1 className="d-flex align-items-center justify-content-center">
             無資料
@@ -68,12 +68,14 @@ const ProfileNews = () => {
             {renderNews
               ?.slice(indexOfFirst, indexOfLast)
               .map((item) => <ProfileNewsList key={uuidv4()} {...item} />)}
-            <Pagination
-              length={renderNews?.length}
-              current={current}
-              number={8}
-              setCurrent={setCurrent}
-            />
+            <span className="d-flex align-items-center justify-content-center w-100">
+              <Pagination
+                length={renderNews?.length}
+                current={current}
+                number={8}
+                setCurrent={setCurrent}
+              />
+            </span>
           </>
         )}
       </div>

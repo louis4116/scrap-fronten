@@ -37,7 +37,7 @@ const Pagination = ({
     <ul className="pagination" style={{ color: 'black' }}>
       <li className="page-item me-2">
         <button className="btn btn-outline-secondary" onClick={prePageHandler}>
-          Previous
+          上一頁
         </button>
       </li>
       {pageNumbers?.map((item: any) => (
@@ -56,7 +56,7 @@ const Pagination = ({
       ))}
       <li className="page-item ms-2">
         <button className="btn btn-outline-secondary" onClick={nextPageHandler}>
-          Next
+          下一頁
         </button>
       </li>
     </ul>

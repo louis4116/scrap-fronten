@@ -32,6 +32,7 @@ const ProfileInf = () => {
           title: '成功',
           text: '修改成功!!!',
           icon: 'success',
+          heightAuto: false,
         }),
       )
       .then(() => resetForm())
@@ -40,6 +41,7 @@ const ProfileInf = () => {
           title: '錯誤',
           text: '密碼錯誤!!!',
           icon: 'error',
+          heightAuto: false,
         }),
       );
   }, 500);

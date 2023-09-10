@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 interface News<T> {
   data: T[];
 }
-console.log(process.env.URL_API);
+
 export const newsApi = createApi({
   reducerPath: 'newsAspi',
   baseQuery: fetchBaseQuery({

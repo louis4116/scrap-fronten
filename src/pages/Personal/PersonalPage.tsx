@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, Outlet } from 'react-router';
+import { useNavigate, Outlet, useLocation } from 'react-router';
 import { category } from './support';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { authStoreActions } from '../../store/authStore';
@@ -17,12 +17,18 @@ const PersonalPage = () => {
   const { data } = useGetUserDataQuery({ token });
   const navigate = useNavigate();
   const user = useAppSelector((item) => item?.authStoreResult.user);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (status !== 'success') {
       navigate('/signup');
     }
-  }, [status, navigate]);
+    if (pathname.includes('storedNews')) {
+      setPersonal('storedNews');
+    } else {
+      setPersonal('');
+    }
+  }, [status, navigate, pathname]);
   useEffect(() => {
     dispatch(authStoreActions.storeUser(data?.data));
     dispatch(userNewsAction.storeUserNews(data?.data.news));
@@ -33,7 +39,7 @@ const PersonalPage = () => {
         <h3 style={{ color: '#3C4048' }}>個人檔案</h3>
       </nav>
 
-      <div className="d-flex flex-column flex-md-row flex-fill mt-2 overflow-hidden">
+      <div className="d-flex flex-column flex-lg-row flex-fill mt-2 overflow-hidden">
         <ul
           className="d-flex flex-column list-group list-group-flush bg-white"
           style={{ minWidth: '210px' }}
@@ -50,7 +56,7 @@ const PersonalPage = () => {
         </ul>
 
         <div className="p-4 mx-2 bg-white w-100 h-100 overflow-auto">
-          <div className="d-flex align-items-center flex-xl-row flex-column">
+          <div className="d-flex align-items-center flex-lg-row flex-column">
             <div className="d-flex align-items-center flex-column w-100 position-relative">
               {Object.keys(user).length === 0 ? <Loading /> : <Outlet />}
             </div>

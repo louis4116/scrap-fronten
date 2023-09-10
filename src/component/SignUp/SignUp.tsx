@@ -22,6 +22,7 @@ const SignUp = ({ setShow }: signUpProps) => {
         Swal.fire({
           title: '註冊成功',
           icon: 'success',
+          heightAuto: false,
         }),
       )
       .then(() => setShow(true))
@@ -30,6 +31,7 @@ const SignUp = ({ setShow }: signUpProps) => {
           title: '註冊失敗',
           icon: 'error',
           text: '註冊失敗，請稍後在試',
+          heightAuto: false,
         }),
       );
   }, 500);

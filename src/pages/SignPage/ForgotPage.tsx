@@ -18,6 +18,7 @@ const ForgotPage = () => {
           icon: 'success',
           title: '成功！！！',
           text: '請確認信箱是否收到信件',
+          heightAuto: false,
         }),
       )
       .catch(() =>
@@ -25,6 +26,7 @@ const ForgotPage = () => {
           icon: 'error',
           title: '錯誤！！！',
           text: '出現錯誤，請稍後再試',
+          heightAuto: false,
         }),
       );
   }, 1000);
