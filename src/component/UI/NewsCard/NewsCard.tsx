@@ -67,7 +67,7 @@ const NewsCard = ({ source, date, title, url, img, summary }: NewsItem) => {
     }
   }, [date]);
   return (
-    <div className="col-12 col-sm-6 col-lg-4 col-xxl-3">
+    <div className="col-12 col-md-6 col-lg-4 col-xxl-3">
       <div
         className="card border-bottom border-2 mb-4 mx-4 p-0"
         style={{ position: 'relative' }}

@@ -10,17 +10,10 @@ function App() {
   return (
     <div className="App" style={{ height: '100%' }}>
       <div
-        className="news-header d-flex flex-row flex-nowrap"
+        className="news-header d-flex flex-column flex-sm-row flex-nowrap"
         style={{ height: '100%' }}
       >
-        <ul
-          className="nav nav-pills d-flex align-items-start flex-column flex-shrink-0 py-3 shadow-lg rounded-end"
-          style={{
-            width: '8rem',
-            backgroundColor: '#0d6efd',
-            zIndex: '100',
-          }}
-        >
+        <ul className="App-nav nav nav-pills flex-column flex-shrink-0 py-3 shadow-lg rounded-end">
           <SideBar />
         </ul>
         {routes}
