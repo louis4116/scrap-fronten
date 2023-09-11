@@ -1,10 +1,10 @@
-interface Default {
+interface DefaultProps {
   show: boolean;
   avatar?: string;
   setShow: (value: boolean) => void;
 }
 
-const ProfileDefault = ({ show, avatar, setShow }: Default) => {
+const ProfileDefault = ({ show, avatar, setShow }: DefaultProps) => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-center flex-column">

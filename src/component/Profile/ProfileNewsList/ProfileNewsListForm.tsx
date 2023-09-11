@@ -1,11 +1,11 @@
 import { Formik, Form, Field } from 'formik';
 import { useUpdateMemoMutation } from '../../../api/userDataApi';
-interface NewsForm {
+interface NewsFormProps {
   memo: string;
   newsId: string;
   token: string;
 }
-const ProfileNewsListForm = ({ memo, newsId, token }: NewsForm) => {
+const ProfileNewsListForm = ({ memo, newsId, token }: NewsFormProps) => {
   const [updateMemo] = useUpdateMemoMutation();
   return (
     <Formik

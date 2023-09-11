@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { FaArrowUpWideShort, FaArrowDownShortWide } from 'react-icons/fa6';
 
-interface Props {
-  renderNews: any;
-  setRenderNews: (valu: any) => void;
+interface CheckProps {
+  renderNews: DATAPROPS[];
+  setRenderNews: (valu: DATAPROPS[]) => void;
 }
 
-const CheckSort = ({ renderNews, setRenderNews }: Props) => {
+const CheckSort = ({ renderNews, setRenderNews }: CheckProps) => {
   const [order, setOrder] = useState(true);
 
   const timeChange = () => {
-    let result = [...renderNews]?.sort((a: any, b: any) => {
+    let result = [...renderNews]?.sort((a: DATAPROPS, b: DATAPROPS) => {
       let tempA = new Date(a.date).getTime();
       let tempB = new Date(b.date).getTime();
       if (order) {

@@ -5,11 +5,11 @@ import { useSignUpMutation } from '../../api/authApi';
 import FormInput from '../UI/FormInput/FormInput';
 import { signUpSchema } from '../../util/formValidation';
 
-interface signUpProps {
+interface SignUpProps {
   setShow: (value: boolean) => void;
 }
 
-const SignUp = ({ setShow }: signUpProps) => {
+const SignUp = ({ setShow }: SignUpProps) => {
   const [signUp] = useSignUpMutation();
 
   const handleSignup = debounce(async (value) => {

@@ -11,9 +11,9 @@ interface NewsShape {
 
 
 
-////----------------COMPONENT------------------//
+//----------------COMPONENT------------------//
 
-//NewsItem
+
 interface NewsItem {
     source: string;
     title: string;
@@ -26,10 +26,10 @@ interface NewsItem {
 
 //----------------STORE------------------//
 
-//authStore  
+
 interface User {
-    name?: string;
-    email?: string;
+    name: string;
+    email: string;
     role?: string;
     avatar?: string;
     news?: [];
