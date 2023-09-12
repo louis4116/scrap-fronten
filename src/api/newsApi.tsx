@@ -10,32 +10,15 @@ export const newsApi = createApi({
     baseUrl: process.env.REACT_APP_URL_API,
   }),
   endpoints: (builder) => ({
-    getLtnNews: builder.query<News<NewsShape>, { id: string | undefined }>({
-      query: ({ id }) => ({
-        url: `/news/ltn/${id}`,
-      }),
-    }),
-    getLtnMilitary: builder.query<News<NewsShape>, { id: string | undefined }>({
-      query: ({ id }) => ({
-        url: `/news/ltn/ltn-military/${id}`,
-      }),
-    }),
-    getCnaNews: builder.query<News<NewsShape>, { id: string | undefined }>({
-      query: ({ id }) => ({
-        url: `/news/cna/${id}`,
-      }),
-    }),
-    getUdnNews: builder.query<News<NewsShape>, { id: string | undefined }>({
-      query: ({ id }) => ({
-        url: `/news/udn/${id}`,
+    getNews: builder.query<
+      News<NewsShape>,
+      { id: string | undefined; backPath: string | undefined }
+    >({
+      query: ({ id, backPath }) => ({
+        url: `/news/${backPath}/${id}`,
       }),
     }),
   }),
 });
 
-export const {
-  useGetLtnNewsQuery,
-  useGetLtnMilitaryQuery,
-  useGetCnaNewsQuery,
-  useGetUdnNewsQuery,
-} = newsApi;
+export const { useGetNewsQuery } = newsApi;

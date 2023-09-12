@@ -1,11 +1,8 @@
-import { useGetCnaNewsQuery } from "../../api/newsApi";
-import { useGetLtnNewsQuery } from "../../api/newsApi";
-import { useGetLtnMilitaryQuery } from "../../api/newsApi";
-import { useGetUdnNewsQuery } from "../../api/newsApi";
+
 export const newsCategory = [
     {
       path:"cna",
-      fn:useGetCnaNewsQuery,
+      backPath:"cna",
       content:[
         {
           name: '即時',
@@ -67,7 +64,7 @@ export const newsCategory = [
     },
     {
       path:"ltn",
-      fn:useGetLtnNewsQuery,
+      backPath:"ltn",
       content:[
         {
             name:"即時",
@@ -105,7 +102,7 @@ export const newsCategory = [
     },
     {
         path:"military",
-        fn:useGetLtnMilitaryQuery,
+        backPath:"ltn/ltn-military",
         content:[
             {
                 name: '軍情動態',
@@ -139,7 +136,7 @@ export const newsCategory = [
     },
     {
         path:"udn",
-        fn:useGetUdnNewsQuery,
+        backPath:"udn",
         content:[
             {
                 name: '精選',

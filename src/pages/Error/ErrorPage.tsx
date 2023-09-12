@@ -1,21 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useTimeout from '../../custom-hook/useTimeout';
 
 const ErrorPage = () => {
-  const [time, setTime] = useState(3);
+  const time = useTimeout(3);
   const navigate = useNavigate();
 
   //時間到會自動跳轉到首頁
   useEffect(() => {
-    let countTime: any;
-    if (time > 0) {
-      countTime = setInterval(() => {
-        setTime((pre) => pre - 1);
-      }, 1000);
-    } else if (time === 0) {
+    if (time === 0) {
       navigate('/news');
     }
-    return () => clearInterval(countTime);
   }, [time, navigate]);
   return (
     <div className="flex-fill d-flex align-items-center justify-content-center flex-column fs-2">

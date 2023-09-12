@@ -1,8 +1,6 @@
-import { Suspense } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { newsRoute } from './route/Route';
 import SideBar from './component/SideBar/SideBar';
-import Loading from './component/Loading/Loading';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.scss';
 

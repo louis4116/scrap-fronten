@@ -6,7 +6,6 @@ import NewsHeader from '../../component/Nav/NewsHeader';
 const NewsListPage = () => {
   const [outletState, setOutletState] = useState({});
   const location = useLocation();
-
   useEffect(() => {
     const findCategory = newsCategory.find(
       (item) => location?.pathname.includes(item.path),
@@ -14,8 +13,8 @@ const NewsListPage = () => {
     if (findCategory) {
       setOutletState({
         newsName: findCategory.path,
-        useQuery: findCategory.fn,
         category: findCategory.content,
+        backPath: findCategory.backPath,
       });
     }
   }, [location.pathname]);

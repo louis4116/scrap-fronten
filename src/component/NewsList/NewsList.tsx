@@ -19,7 +19,6 @@ const NewsList = ({ data, category, newsName, isFetching }: Props) => {
   const [indexOfFirst, setindexOfFirst] = useState(1);
   const [current, setCurrent] = useState(1);
   const newsData = useAppSelector((state) => state.newsStoreResult[newsName]);
-
   useEffect(() => {
     setIndexOfLast(current * 12);
     let result = current * 12;
@@ -69,7 +68,7 @@ const NewsList = ({ data, category, newsName, isFetching }: Props) => {
           ))}
         </ul>
       </header>
-      {newsData.length !== 0 && <h3>本次搜尋結果:{newsData.length}筆</h3>}
+      {newsData?.length !== 0 && <h3>本次搜尋結果:{newsData.length}筆</h3>}
       {renderList}
     </>
   );

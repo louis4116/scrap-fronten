@@ -13,7 +13,7 @@ const sideBar = 'side-bar-icon me-1';
 
 const SideBar = () => {
   const { pathname } = useLocation();
-  const { status } = useLoginState();
+  const { token } = useLoginState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const signOut = () => {
@@ -39,23 +39,22 @@ const SideBar = () => {
         }),
       );
   };
-  const loginStates =
-    status === 'success' ? (
-      <div className={linkStyle} onClick={signOut}>
-        <FiLogOut className={sideBar} />
-        登出
-      </div>
-    ) : (
-      <Link
-        to="/signup"
-        className={
-          pathname.includes('/signup') ? `${linkStyle} text-white` : linkStyle
-        }
-      >
-        <FiLogIn className={sideBar} />
-        登入
-      </Link>
-    );
+  const loginStates = !!token ? (
+    <div className={linkStyle} onClick={signOut}>
+      <FiLogOut className={sideBar} />
+      登出
+    </div>
+  ) : (
+    <Link
+      to="/signup"
+      className={
+        pathname.includes('/signup') ? `${linkStyle} text-white` : linkStyle
+      }
+    >
+      <FiLogIn className={sideBar} />
+      登入
+    </Link>
+  );
   return (
     <>
       <Link
@@ -67,7 +66,7 @@ const SideBar = () => {
         <FaHome className={sideBar} />
         首頁
       </Link>
-      {status === 'success' && (
+      {!!token && (
         <Link
           to="/personal"
           className={

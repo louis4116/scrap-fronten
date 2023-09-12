@@ -22,19 +22,15 @@ const newsStoreSlice = createSlice({
       //儲存爬蟲獲取的新聞
       const { data, pathName } = action.payload;
       if (pathName.includes('ltn')) {
-        console.log('ltn');
         state.ltn = data;
       }
       if (pathName.includes('military')) {
-        console.log('military');
         state.military = data;
       }
       if (pathName.includes('cna')) {
-        console.log('cna');
         state.cna = data;
       }
       if (pathName.includes('udn')) {
-        console.log('udn');
         state.udn = data;
       }
     },
