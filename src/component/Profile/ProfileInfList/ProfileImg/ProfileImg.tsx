@@ -27,12 +27,14 @@ const ProfileImg = ({
   const avatarRef = useRef<AvatarEditor | any>();
   const [updatedImg] = useUpdatedImgMutation();
 
+  //reset功能
   const restore = () => {
     setShow(false);
     setSure(false);
     setFileBase64('');
     setScale(1.5);
   };
+  //上傳功能
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files?.length !== 0) {
       const fileReader = new FileReader();
@@ -45,6 +47,7 @@ const ProfileImg = ({
       };
     }
   };
+  //預覽功能
   const check = () => {
     if (avatarRef?.current) {
       const avatar = avatarRef.current.getImage().toDataURL();
@@ -54,6 +57,7 @@ const ProfileImg = ({
       });
     }
   };
+  //傳送給後端
   const toBackEnd = debounce(async () => {
     if (!avatarRef?.current?.props.image) {
       return Swal.fire({

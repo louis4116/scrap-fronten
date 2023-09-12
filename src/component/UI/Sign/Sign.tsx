@@ -1,5 +1,4 @@
 import { FaRegNewspaper } from 'react-icons/fa6';
-import './sign.scss';
 
 interface signUpProps {
   children?: React.ReactNode;
@@ -7,7 +6,10 @@ interface signUpProps {
 const Sign = ({ children }: signUpProps) => {
   return (
     <>
-      <div className="signupPage-container flex-fill d-flex">
+      <div
+        className="signupPage-container flex-fill d-flex"
+        style={{ position: 'relative' }}
+      >
         <div
           className="flex-fill d-flex align-items-center justify-content-center shadow"
           style={{ zIndex: '5' }}
@@ -24,7 +26,18 @@ const Sign = ({ children }: signUpProps) => {
           </div>
         </div>
       </div>
-      <div className="sigunPage-image"></div>
+      <img
+        src={require('../../../img/Blank 2.png')}
+        alt=""
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+        }}
+        loading="lazy"
+      />
+      {/* <div className="sigunPage-image"></div> */}
     </>
   );
 };

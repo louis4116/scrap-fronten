@@ -13,15 +13,18 @@ const authStoreSlice = createSlice({
     storeToken: (state, action) => {
       const data = action.payload;
       state.loginState = data;
+      //將登入資料儲存在localStorage
       localStorage.setItem('authToken', JSON.stringify(data));
     },
     removeToken: (state) => {
       state.loginState = null;
+      //將登入資料移除localStorage
       localStorage.removeItem('authToken');
     },
     storeUser: (state, action) => {
       const data = action.payload;
       if (!data) return;
+      //儲存使用者資料
       state.user = data;
     },
   },

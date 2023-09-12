@@ -4,9 +4,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { newsCompany } from './category';
 import './newsheader.scss';
 
+interface StyleProps {
+  isActive: boolean;
+  url: string;
+}
+
 const NewsHeader = () => {
   const location = useLocation();
-  const getStyles = (items: any) => {
+  const getStyles = (items: StyleProps) => {
     const { url, isActive } = items;
     if (location.pathname.includes(url) || isActive)
       return 'nav-link active px-2';

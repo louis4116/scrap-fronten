@@ -2,7 +2,7 @@ import './loading.scss';
 
 const Loading = () => {
   return (
-    <div className="loading-container d-flex flex-column align-items-center justify-content-center">
+    <div className="loading-container d-flex flex-column align-items-center justify-content-center w-100">
       <p className="loading-p d-flex align-items-center ">
         讀取中<span></span>
         <span></span>

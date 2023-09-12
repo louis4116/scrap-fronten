@@ -23,6 +23,7 @@ const PersonalPage = () => {
     if (status !== 'success') {
       navigate('/signup');
     }
+    //判斷該顯目的項目
     if (pathname.includes('storedNews')) {
       setPersonal('storedNews');
     } else {

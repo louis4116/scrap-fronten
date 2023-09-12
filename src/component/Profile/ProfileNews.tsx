@@ -21,12 +21,15 @@ const ProfileNews = () => {
   };
   const debounceChange = debounce(handlerChange, 300);
   useEffect(() => {
+    //判斷新聞的來源
     const tempNews = newsData.filter(
       (item: DATAPROPS) => item.source === render,
     );
+    //搜尋新聞
     const result = tempNews.filter((item: DATAPROPS) =>
       item.title.includes(search),
     );
+    //使用者新聞的分割數量
     setIndexOfLast(current * 8);
     let tempCurrent = current * 8;
     setindexOfFirst(tempCurrent - 8);
@@ -55,6 +58,7 @@ const ProfileNews = () => {
             setRender={setRender}
           />
         ))}
+        {/* 時間排序，由小到大或由大到小 */}
         <CheckSort renderNews={renderNews} setRenderNews={setRenderNews} />
       </ul>
 

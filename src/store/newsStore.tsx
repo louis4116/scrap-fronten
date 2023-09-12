@@ -19,6 +19,7 @@ const newsStoreSlice = createSlice({
   } as NewsStoreState,
   reducers: {
     storeNews: (state, action: PayloadAction<News<NewsShape>>) => {
+      //儲存爬蟲獲取的新聞
       const { data, pathName } = action.payload;
       if (pathName.includes('ltn')) {
         console.log('ltn');

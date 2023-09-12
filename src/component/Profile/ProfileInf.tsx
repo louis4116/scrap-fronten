@@ -19,6 +19,7 @@ const ProfileInf = () => {
   const userData = useAppSelector((item) => item.authStoreResult.user);
   const { name, email, role, avatar } = userData;
 
+  //reset密碼
   const handleReset = debounce(async (value, resetForm) => {
     await resetPassword({
       token,

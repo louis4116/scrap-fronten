@@ -1,14 +1,14 @@
 import { Navigate } from 'react-router';
+import ErrorPage from '../pages/Error/ErrorPage';
 import HomePage from '../pages/Home/HomePage';
+import PersonalPage from '../pages/Personal/PersonalPage';
+import ProfileInf from '../component/Profile/ProfileInf';
+import ProfileNews from '../component/Profile/ProfileNews';
 import NewsAll from '../component/News/NewsAll';
 import NewsListPage from '../pages/News/NewsListPage';
-import PersonalPage from '../pages/Personal/PersonalPage';
-import ProfileNews from '../component/Profile/ProfileNews';
-import ProfileInf from '../component/Profile/ProfileInf';
 import SignupPage from '../pages/SignPage/SignupPage';
 import ForgotPage from '../pages/SignPage/ForgotPage';
 import ResetPage from '../pages/SignPage/ResetPage';
-import ErrorPage from '../pages/Error/ErrorPage';
 
 export const newsRoute = () => [
   {

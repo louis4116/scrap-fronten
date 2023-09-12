@@ -16,7 +16,7 @@ const NewsAll = () => {
   const location = useLocation();
   const { newsName, useQuery, category }: NewsComponent = useOutletContext();
   const { id } = useParams();
-  const { data, isFetching } = useQuery({ id });
+  const { data, isFetching } = useQuery({ id }, { skip: !id });
   const newsData = useAppSelector((state) => state.newsStoreResult[newsName]);
   useEffect(() => {
     if (data) {
